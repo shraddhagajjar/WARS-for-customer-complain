@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>democss</title>
+		<link rel="stylesheet" href="css/nav.css">
+		
+	</head>
+	<body class="no-js">
+    	<script>
+			var el = document.getElementsByTagName("body")[0];
+			el.className = "";
+		</script>
+        <noscript>
+        </noscript>
+		<nav id="topNav">
+        	<ul>
+            	<li><a href="index.php" title="Home">Home</a></li>
+          		<li><a href="#" title="Customer Complain Handling">Complain</a>               
+				<ul>
+					  	<li><a href="hoccaja.php" title="Custome Search">Custome Search</a></li>
+                    	<li><a href="hocc.php" title="Uncked complain">Unchecked Complain</a></li>
+						<li><a href="solve.php" title="Solved Complian">Solve Complian</a></li>
+                        <li class="last"><a href="customer.php" title="Total Complain with current status">Total Complain</a></li></ul>
+			  </li>
+              <li><a href="#" title="Product Handle">Product Handle</a>
+			  <ul>
+			  			
+                        <li><a href="hoph.php" title="Custome Serach">Custome Search</a></li>
+                    	<li><a href="cph.php" title="Add new Product">New Product</a></li>
+                        <li class="last"><a href="vproduct.php" title="Edit/Delete Product">View Product</a></li>
+                </ul>        
+			  </li>
+              <li><a href="#" title="Team Handle">Team Handle</a>
+			  <ul>
+			  			
+                        <li><a href="hotl.php" title="Custome Serach">Custome Search</a></li>
+                    	<li><a href="ctl.php" title="Create Team Ledaer">Add new Leader</a></li>
+                    	<li><a href="vtl.php" title="List of Team Ledaer">View Team Leader</a></li>
+                    	<li><a href="reporting.php" title="Reporting of Team Ledaer">Reporting</a></li>
+                        <li class="last"><a href="ltl.php" title="Load of Team Leader">View Load</a></li>
+                </ul>        
+			  </li>
+              <li><a href="#" title="Engineer Handle">Engineer Handle</a>
+			  <ul>
+			  			
+                        <li><a href="hoeh.php" title="Custome Serach">Custome Search</a></li>
+                    	<li><a href="cne.php" title="Create Engineer">Add New Engineer</a></li>
+                    	<li class="last"><a href="vel.php" title="List of Team Ledaer">View Engineer</a></li>
+						
+                    	<!--<li><a href="roe.php" title="Reporting of Engineer">Reporting</a></li>
+                        <li class="last"><a href="woe.php" title="Work of Engineer">View work</a></li>-->
+                </ul>        
+			  </li>
+			  <li>
+			  	<a href="#" title="phone operator">Phone Operator</a>
+				<ul>
+				<li><a href="phoh.php" title ="Custome search of phone operator">Custome search</a></li>
+				<li><a href="cpho.php" title="add new phone operator">add phone operator</a></li>
+				<li class="last"><a href="vpho.php" title="view list of phone operator">view phone operator</a></li>
+				</ul>
+			  </li>
+			  <li class="last"><a href="" title="Location">Location</a>
+			  <ul>
+			  	<li><a href="holajax.php" title="Custome Search">Custome Search</a></li>
+			  	<li><a href="addlocation.php" title ="Add new Location">Add Location</a></li>
+				<liclass="last"><a href="viewlocation.php" title="View Edit/Delete Location">View Location</a></li>
+			  </ul>
+			  
+			  </li>
+			       
+          </ul>
+        </nav>
+        
+		<script src="js/jquery.js"></script>
+        <script src="js/modernizr.js"></script>
+		<script>
+			(function($){
+				
+				//cache nav
+				var nav = $("#topNav");
+				
+				//add indicator and hovers to submenu parents
+				nav.find("li").each(function() {
+					if ($(this).find("ul").length > 0) {
+						$("<span>").text("^").appendTo($(this).children(":first"));
+
+						//show subnav on hover
+						$(this).mouseenter(function() {
+							$(this).find("ul").stop(true, true).slideDown();
+						});
+						
+						//hide submenus on exit
+						$(this).mouseleave(function() {
+							$(this).find("ul").stop(true, true).slideUp();
+						});
+					}
+				});
+			})(jQuery);
+		</script>
+	</body>
+</html>

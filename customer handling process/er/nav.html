@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>:: Er Site OF CnC ::</title>
+		<link rel="stylesheet" href="css/nav.css">
+		
+	</head>
+	<body class="no-js">
+    	<script>
+			var el = document.getElementsByTagName("body")[0];
+			el.className = "";
+		</script>
+        <noscript>
+        </noscript>
+		<nav id="topNav">
+        	<ul>
+            	<li><a href="index.php" title="Home">Home</a></li>
+				<li><a href="#" title="Customer Complain Handling">Complain</a>               
+				<ul>
+				   	<li><a href="hocc.php" title="Uncked complain">Unchecked Complain</a></li>
+                    <li class="last"><a href="customer.php" title="Total Complain with current status">Total Complain</a></li></ul>
+			  </li>
+
+              <li><a href="creporting.php" title="Reporting">Reporting</a>			  </li>
+			       <li class="last"><a href="logout.php" title="Logout">Logout</a></li>
+          </ul>
+        </nav>
+        
+		<script src="js/jquery.js"></script>
+        <script src="js/modernizr.js"></script>
+		<script>
+			(function($){
+				
+				//cache nav
+				var nav = $("#topNav");
+				
+				//add indicator and hovers to submenu parents
+				nav.find("li").each(function() {
+					if ($(this).find("ul").length > 0) {
+						$("<span>").text("^").appendTo($(this).children(":first"));
+
+						//show subnav on hover
+						$(this).mouseenter(function() {
+							$(this).find("ul").stop(true, true).slideDown();
+						});
+						
+						//hide submenus on exit
+						$(this).mouseleave(function() {
+							$(this).find("ul").stop(true, true).slideUp();
+						});
+					}
+				});
+			})(jQuery);
+		</script>
+	</body>
+</html>
